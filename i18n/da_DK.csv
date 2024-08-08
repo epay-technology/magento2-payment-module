@@ -78,3 +78,8 @@
 "The order was un-canceled by the ePay Callback", "Annulleringen af ordren er blevet ændret af ePay Callback"
 "The order could not be un-canceled - Reason:","Annulleringen af ordren kunne ikke ændres - &aring;rsag:"
 "An error occurred while fetching the transaction information. Please see the ePay log file for more information.","Der er opst&aring;et en fejl ved hentning af transaktionsinformationerne. Se ePay log filen for mere information."
+"The payment have not been voided for", "Betalingen er ikke annulleret for"
+"The transaction could not be moved because the amount of the edited order exceeds the transaction amount - Go to the ePay administration to handle the payment manually.","Betalingen kunne ikke flyttes fordi bel&#248;bet er h&#248;jere end det oprindelige bel&#248;b - G&#229; til ePay administrationen for at håndtere betalingen manuelt."
+"Nothing changed","Nothing changed"
+"Payment moved from parent order #%1","Betalingen er flytter fra den oprindelige order #%1"
+"Move Payment From Parent","Flyt betalingen fra tidligere"

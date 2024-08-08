@@ -166,5 +166,11 @@
       <comment><![CDATA[Time in minutes the customer has to complete the payment.]]></comment>
       <config_path>payment/epay/timeout</config_path>
     </field>
+    <field id="keep_payment_onedit" type="select" translate="label comment" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+      <label><![CDATA[<b>Keep the payment when order is edited</b>]]></label>
+      <comment><![CDATA[If this is enabled, you will have to manualy handle the payment in the epay administration or move payment to the new order. If disabled, this will follow Magentos default behaviour and cancel the payment at epay when an order is edited.]]></comment>
+      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+      <config_path>payment/epay/keep_payment_onedit</config_path>
+    </field>
   </group>
 </include>

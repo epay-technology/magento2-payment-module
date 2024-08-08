@@ -144,7 +144,6 @@ class Payment extends \Epay\Payment\Model\Method\AbstractPayment implements
         return $paymentRequest;
     }
 
-
     /**
      * Create Invoice
      *
@@ -478,6 +477,10 @@ class Payment extends \Epay\Payment\Model\Method\AbstractPayment implements
     public function cancel(\Magento\Payment\Model\InfoInterface $payment)
     {
         try {
+            if ($this->_request->getActionName() == 'save' && $this->_epayHelper->getEpayConfigData('keep_payment_onedit', $payment->getOrder()->getStoreId())) {
+                $this->_messageManager->addSuccess(__("The payment have not been voided for") . ' (' . $payment->getOrder()->getIncrementId() .')');
+                return $this;
+            }
             $this->void($payment);
             $this->_messageManager->addSuccess(
                 __("The payment have been voided") . ' (' . $payment->getOrder(

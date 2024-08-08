@@ -14,6 +14,7 @@
  */
 
 $specificInfo = $block->getSpecificInformation();
+$order = $this->getInfo()->getOrder();
 ?>
 <?php
 echo $block->escapeHtml($block->getMethod()->getTitle()); ?>
@@ -39,6 +40,16 @@ if ($specificInfo) : ?>
             </tr>
         <?php
         endforeach; ?>
+         <?php if ($order->getRelationParentId()) : ?>
+            <tr>
+                <th><?= $block->escapeHtml(__('Payment moved from parent order')) ?></th>
+                <td>
+                    <a href="<?= $block->escapeUrl($block->getUrl('sales/order/view', ['order_id' => $order->getRelationParentId()])) ?>">
+                        <?= $block->escapeHtml($order->getRelationParentRealId()) ?>
+                    </a>
+                </td>
+            </tr>
+        <?php endif; ?>
     </table>
 <?php
 endif; ?>
